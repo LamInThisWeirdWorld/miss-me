@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import hamsterGif from "./assets/Cry Crying GIF by Sad Hamster.gif";
 import catGif from "./assets/Cat Moving GIF.gif";
 import texts from "./noButtonText";
@@ -24,6 +24,26 @@ const App = () => {
       });
     }
   };
+
+  useEffect(() => {
+    if (textNoIndex === texts.length - 1) {
+      const handleMouseMove = (e: MouseEvent) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        const offset = 20;
+
+        setPositionNo((prev) => ({
+          x: mouseX < window.innerWidth / 2 ? prev.x + offset : prev.x - offset,
+          y:
+            mouseY < window.innerHeight / 2 ? prev.y + offset : prev.y - offset,
+        }));
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, [textNoIndex]);
 
   return (
     <div className="bg-black min-h-screen flex flex-col items-center justify-center gap-5">

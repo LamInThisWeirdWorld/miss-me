@@ -7,9 +7,8 @@ const texts = [
   "im gonna cryyyyyy",
   "Nooo ai cho bấm :((",
   "Bye :)))))))))",
-  "Đố c bắt đc e~~",
-  "Khum",
   "Bắt buộc phải nhớ",
+  "Đố c bắt đc e~~",
 ];
 
 export default texts;
