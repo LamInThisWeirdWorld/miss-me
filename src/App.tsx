@@ -8,6 +8,7 @@ const App = () => {
   const [sizeYes, setSizeYes] = useState(1);
   const [positionNo, setPositionNo] = useState({ x: 0, y: 0 });
   const [textNoIndex, setTextNoIndex] = useState(0);
+  const [stop, setStop] = useState(false);
 
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
@@ -27,16 +28,16 @@ const App = () => {
 
   useEffect(() => {
     if (textNoIndex === texts.length - 1) {
+      setStop(true);
       const handleMouseMove = (e: MouseEvent) => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
-        const offset = 20;
+        const offset = 40;
 
         setPositionNo((prev) => ({
-          x: mouseX < window.innerWidth / 2 ? prev.x + offset : prev.x - offset,
-          y:
-            mouseY < window.innerHeight / 2 ? prev.y + offset : prev.y - offset,
+          x: mouseX < maxX / 2 ? prev.x + offset : prev.x - offset,
+          y: mouseY < maxY / 2 ? prev.y + offset : prev.y - offset,
         }));
       };
 
@@ -60,7 +61,8 @@ const App = () => {
         </button>
         <button
           onClick={handleClickA}
-          className="bg-red-600 w-70 h-20 text-2xl rounded-lg text-white"
+          disabled={stop}
+          className="bg-red-600 w-70 h-20 text-2xl rounded-lg text-white transition-all duration-100"
           style={{
             transform: `scale(${sizeNo}) translate(${positionNo.x}px, ${positionNo.y}px)`,
           }}
