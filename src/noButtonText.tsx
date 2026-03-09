@@ -17,7 +17,7 @@ import raccoonFire from "./assets/Angry Emoji GIF by 644 (1).gif";
 import racoonFall from "./assets/Emoji Falling GIF by 644.gif";
 
 const texts = [
-  "Nope",
+  "Will u miss me",
   "Really???",
   "Are u sure?????",
   "Ơ kìa :(((((",
