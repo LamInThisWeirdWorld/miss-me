@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import hamsterGif from "./assets/Cry Crying GIF by Sad Hamster.gif";
-import catGif from "./assets/Cat Moving GIF.gif";
+// import hamsterGif from "./assets/Cry Crying GIF by Sad Hamster.gif";
+// import catGif from "./assets/Cat Moving GIF.gif";
 import { texts, gif } from "./noButtonText";
 import raccoonHeart from "./assets/Night Sleep GIF by 644.gif";
 
