@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-// import hamsterGif from "./assets/Cry Crying GIF by Sad Hamster.gif";
-// import catGif from "./assets/Cat Moving GIF.gif";
 import { texts, gif } from "./noButtonText";
 import raccoonHeart from "./assets/Night Sleep GIF by 644.gif";
 
@@ -28,8 +26,8 @@ const App = () => {
 
     if (sizeNo <= 0.5) {
       setPositionNo({
-        x: Math.random() * maxX - maxX / 2,
-        y: Math.random() * maxY - maxY / 2,
+        x: Math.random() * (maxX - maxX / 5),
+        y: Math.random() * (maxY - maxY / 5),
       });
     }
   };
